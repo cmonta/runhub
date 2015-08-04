@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  post 'registration/register'
+  post 'registration/delete'
+
   get 'welcome/index'
 
   resources :races
