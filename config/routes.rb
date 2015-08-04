@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  post 'registration/register'
-  post 'registration/delete'
+  post 'race_register/register'
+  post 'race_register/delete'
 
   get 'welcome/index'
 

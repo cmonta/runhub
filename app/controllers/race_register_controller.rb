@@ -1,5 +1,5 @@
-class RegistrationController < ApplicationController
-before_filter :find_race
+class RaceRegisterController < ApplicationController
+	before_filter :find_race
 
   def register
   	@race.users << current_user

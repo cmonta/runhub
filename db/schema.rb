@@ -11,16 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150803113213) do
+ActiveRecord::Schema.define(version: 20150804214131) do
 
-  create_table "races", force: :cascade do |t|
-    t.string   "name"
-    t.date     "date"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "registrations", force: :cascade do |t|
+  create_table "race_registers", force: :cascade do |t|
     t.integer  "bib"
     t.integer  "user_id"
     t.integer  "race_id"
@@ -28,8 +21,15 @@ ActiveRecord::Schema.define(version: 20150803113213) do
     t.datetime "updated_at", null: false
   end
 
-  add_index "registrations", ["race_id"], name: "index_registrations_on_race_id"
-  add_index "registrations", ["user_id"], name: "index_registrations_on_user_id"
+  add_index "race_registers", ["race_id"], name: "index_race_registers_on_race_id"
+  add_index "race_registers", ["user_id"], name: "index_race_registers_on_user_id"
+
+  create_table "races", force: :cascade do |t|
+    t.string   "name"
+    t.date     "date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
