@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   post 'race_register/register'
-  post 'race_register/delete'
+  delete 'race_register/delete'
+  get 'race_register/list_races'
+  get 'race_register/list_users'
 
   get 'welcome/index'
 

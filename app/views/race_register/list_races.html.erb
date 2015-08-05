@@ -1,0 +1,22 @@
+<h2><%= @user.nickname %>'s Races registered</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @races.each do |race| %>
+      <tr>
+        <td><%= race.name %></td>
+        <td><%= race.date %></td>
+        <td><%= link_to 'Show', race %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to 'Back', users_path %>

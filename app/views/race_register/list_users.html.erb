@@ -1,13 +1,10 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Users list</h1>
+<h2><%= @race.name %>'s users registered</h2>
 
 <table>
   <thead>
     <tr>
       <th>Nickname</th>
       <th>Email</th>
-      <th>Registrations</th>
     </tr>
   </thead>
 
@@ -16,11 +13,9 @@
       <tr>
         <td><%= user.nickname %></td>
         <td><%= user.email %></td>
-        <td><%=link_to user.races.count, race_register_list_races_path(:user => user) %></td>
-        <td><%= link_to 'Show', user %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
+<%= link_to 'Back', races_path %>

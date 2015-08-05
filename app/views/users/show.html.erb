@@ -1,11 +1,15 @@
 <p id="notice"><%= notice %></p>
 
+<h2>User details</h2>
+
 <p>
-  <strong>Name:</strong>
+  <strong>Email:</strong>
   <%= @user.email %>
 </p>
 
 <p>
-  <strong>Id:</strong>
-  <%= @user.id %>
+  <strong>Nickname:</strong>
+  <%= @user.nickname %>
 </p>
+
+<%= link_to 'Back', users_path %>

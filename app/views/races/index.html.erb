@@ -1,6 +1,6 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Races</h1>
+<h1>Races list</h1>
 
 <table>
   <thead>
@@ -17,13 +17,13 @@
       <tr>
         <td><%= race.name %></td>
         <td><%= race.date %></td>
-        <td><%= race.users.count %></td>
+        <td><%= link_to race.users.count, race_register_list_users_path(:race => race) %></td>
         <td><%= link_to 'Show', race %></td>
         <td><%= link_to 'Edit', edit_race_path(race) %></td>
         <td><%= link_to 'Destroy', race, method: :delete, data: { confirm: 'Are you sure?' } %></td>
         <% if signed_in? %>
           <% if race.users.exists?(current_user) %>
-            <td><%= link_to 'Resign', race_register_delete_path(:race_id => race), :method => :post  %></td>
+            <td><%= link_to 'Resign', race_register_delete_path(:race_id => race), :method => :delete  %></td>
           <% else %>
             <td><%= link_to 'Register', race_register_register_path(:race_id => race), :method => :post %></td>
           <% end %>
