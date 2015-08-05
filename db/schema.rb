@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150804214131) do
+ActiveRecord::Schema.define(version: 20150805182355) do
+
+  create_table "follows", force: :cascade do |t|
+    t.integer  "followable_id",                   null: false
+    t.string   "followable_type",                 null: false
+    t.integer  "follower_id",                     null: false
+    t.string   "follower_type",                   null: false
+    t.boolean  "blocked",         default: false, null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "follows", ["followable_id", "followable_type"], name: "fk_followables"
+  add_index "follows", ["follower_id", "follower_type"], name: "fk_follows"
 
   create_table "race_registers", force: :cascade do |t|
     t.integer  "bib"
@@ -29,6 +42,11 @@ ActiveRecord::Schema.define(version: 20150804214131) do
     t.date     "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "user_connections", id: false, force: :cascade do |t|
+    t.integer "user_a_id", null: false
+    t.integer "user_b_id", null: false
   end
 
   create_table "users", force: :cascade do |t|

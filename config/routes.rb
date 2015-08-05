@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   delete 'race_register/delete'
   get 'race_register/list_races'
   get 'race_register/list_users'
+  get 'users/follow'
+  get 'users/list_followers'
 
   get 'welcome/index'
 

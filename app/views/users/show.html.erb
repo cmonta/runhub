@@ -12,4 +12,15 @@
   <%= @user.nickname %>
 </p>
 
+<p>
+	<strong>Followers</strong>
+	<%= @user.followers_count %>
+</p>
+
+<p>
+	<strong>Follow</strong>
+	<%= @user.follow_count %>
+</p>
+
+
 <%= link_to 'Back', users_path %>

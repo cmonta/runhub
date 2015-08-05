@@ -8,6 +8,7 @@
       <th>Nickname</th>
       <th>Email</th>
       <th>Registrations</th>
+      <th>Followers</th>
     </tr>
   </thead>
 
@@ -17,6 +18,8 @@
         <td><%= user.nickname %></td>
         <td><%= user.email %></td>
         <td><%=link_to user.races.count, race_register_list_races_path(:user => user) %></td>
+        <td><%= link_to user.followers_count, users_list_followers_path(:user => user) %></td>
+        <td><%= link_to 'Follow', users_follow_path(:user => user) %></td>
         <td><%= link_to 'Show', user %></td>
       </tr>
     <% end %>
