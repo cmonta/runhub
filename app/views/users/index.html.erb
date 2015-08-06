@@ -22,7 +22,7 @@
         <td><%= link_to user.followers_count, users_list_followers_path(:user => user) %></td>
         <td><%= link_to user.follow_count, users_list_followees_path(:user => user) %></td>
         <td><%= link_to 'Follow', users_follow_path(:user => user) %></td>
-        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Show', user.profile %></td>
       </tr>
     <% end %>
   </tbody>

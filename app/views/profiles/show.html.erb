@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h2>User profile</h2>
+
+<p>
+  <strong>Email:</strong>
+  <%= @profile.user.email %>
+</p>
+
+<p>
+  <strong>Nickname:</strong>
+  <%= @profile.user.nickname %>
+</p>
+
+<p>
+	<strong>Followers</strong>
+	<%= @profile.user.followers_count %>
+</p>
+
+<p>
+	<strong>Follow</strong>
+	<%= @profile.user.follow_count %>
+</p>
+
+<p>
+	<strong>City</strong>
+	<%= @profile.city %>
+</p>
+
+
+<% if @profile.user == current_user %>
+<%= link_to 'Edit', edit_profile_path %> | 
+<% end %>
+<%= link_to 'Back', users_path %>
