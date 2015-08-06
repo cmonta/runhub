@@ -1,6 +1,8 @@
 class ProfilesController < ApplicationController
 	before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
+	before_action :authenticate_user!, only: [:edit, :update, :destroy]
+  before_filter :correct_role, only: [:edit, :update, :destroy]
 
 	def new
 	end
@@ -13,7 +15,7 @@ class ProfilesController < ApplicationController
 
 	def update
 		if @profile.update(profile_params)
-        redirect_to @profile, notice: 'Race was successfully updated.'
+        redirect_to @profile, notice: 'Profile was successfully updated.'
       end
 	end
 
@@ -26,5 +28,9 @@ class ProfilesController < ApplicationController
 	# Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
       params.require(:profile).permit(:city, :level, :description)
+    end
+
+    def correct_role
+      redirect_to(users_path) unless current_user.admin? || (current_user == @profile.user)
     end
 end

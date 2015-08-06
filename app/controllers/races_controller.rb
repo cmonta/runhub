@@ -1,6 +1,9 @@
 class RacesController < ApplicationController
   before_action :set_race, only: [:show, :edit, :update, :destroy]
 
+  before_action :authenticate_user!, only: [:edit, :update, :destroy]
+  before_filter :correct_role, only: [:edit, :update, :destroy]
+
   # GET /races
   # GET /races.json
   def index
@@ -70,5 +73,9 @@ class RacesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def race_params
       params.require(:race).permit(:name, :date)
+    end
+
+    def correct_role
+      redirect_to(races_path) unless current_user.admin?
     end
 end
