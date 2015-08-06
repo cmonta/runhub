@@ -19,8 +19,10 @@
         <td><%= race.date %></td>
         <td><%= link_to race.users.count, race_register_list_users_path(:race => race) %></td>
         <td><%= link_to 'Show', race %></td>
+        <% if  signed_in? && current_user.admin? %>
         <td><%= link_to 'Edit', edit_race_path(race) %></td>
         <td><%= link_to 'Destroy', race, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% end %>
         <% if signed_in? %>
           <% if race.users.exists?(current_user) %>
             <td><%= link_to 'Resign', race_register_delete_path(:race_id => race), :method => :delete  %></td>

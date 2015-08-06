@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get 'race_register/list_users'
   get 'users/follow'
   get 'users/list_followers'
+  get 'users/list_followees'
 
   get 'welcome/index'
 

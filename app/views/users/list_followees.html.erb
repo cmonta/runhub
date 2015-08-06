@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @user.nickname %>'s followees</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nickname</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @followees.each do |followee| %>
+      <tr>
+        <td><%= followee.nickname %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Back', users_path %>
