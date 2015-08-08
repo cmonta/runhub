@@ -1,27 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Runhub</title>
+  <title><%= yield(:title) %> | Runhub</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-<%= link_to 'Races', races_path %>
-<%= link_to 'Users', users_path %>
 
-<%= link_to 'Sign in', new_user_session_path %>
-<%= link_to 'Sign up', new_user_registration_path %>
-<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
-<% if signed_in? %>
-<p>Logged as : <%= current_user.email %></p>
-<p><%= link_to 'My profile', profile_path(current_user.profile) %></p>
-<% else %>
-<p>Not logged</p>
-<% end %>
-<hr>
+<%= render 'shared/navbar' %>
+<div class="container" >
 
-<%= yield %>
+	<div class="main-page-content <%= controller.controller_name %>">
+
+		<div class="row">
+			<%= yield %>
+		</div>
+
+	</div>
+	
+</div>
 
 </body>
 </html>
