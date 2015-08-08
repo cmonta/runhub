@@ -27,6 +27,10 @@
 	<%= @profile.city %>
 </p>
 
+<p>
+	<strong>Level</strong>
+	<%= @profile.level %>
+</p>
 
 <% if user_signed_in? && (@profile.user == current_user || current_user.admin?) %>
 <%= link_to 'Edit', edit_profile_path %> | 

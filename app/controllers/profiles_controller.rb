@@ -2,7 +2,7 @@ class ProfilesController < ApplicationController
 	before_action :set_profile, only: [:show, :edit, :update, :destroy]
 
 	before_action :authenticate_user!, only: [:edit, :update, :destroy]
-  before_filter :correct_role, only: [:edit, :update, :destroy]
+ 	before_filter :correct_role, only: [:edit, :update, :destroy]
 
 	def new
 	end
