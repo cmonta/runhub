@@ -1,6 +1,6 @@
 <% provide(:title, "Users") %>
 
-<div class="col-md-8">
+<div class="col-md-6">
 
 <p id="notice"><%= notice %></p>
 
@@ -10,7 +10,6 @@
   <thead>
     <tr>
       <th>Nickname</th>
-      <th>Email</th>
       <th>Registrations</th>
       <th>Followers</th>
       <th>Followees</th>
@@ -20,15 +19,13 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
-        <td><%= user.nickname %></td>
-        <td><%= user.email %></td>
+        <td><%= link_to user.nickname, user.profile %></td>
         <td><%=link_to user.races.count, race_register_list_races_path(:user => user) %></td>
         <td><%= link_to user.followers_count, users_list_followers_path(:user => user) %></td>
         <td><%= link_to user.follow_count, users_list_followees_path(:user => user) %></td>
         <% if user_signed_in? %>
         <td><%= link_to 'Follow', users_follow_path(:user => user) %></td>
         <% end %>
-        <td><%= link_to 'Show', user.profile %></td>
       </tr>
     <% end %>
   </tbody>
