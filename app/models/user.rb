@@ -20,7 +20,10 @@ class User < ActiveRecord::Base
 
   has_one :profile, dependent: :destroy
 
-   def build_profile
+  accepts_nested_attributes_for :profile
+
+  private
+  def build_profile
     Profile.create(user: self) # Associations must be defined correctly for this syntax, avoids using ID's directly.
   end
 end

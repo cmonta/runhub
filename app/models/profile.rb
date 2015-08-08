@@ -4,5 +4,5 @@ class Profile < ActiveRecord::Base
 	# formatted as an array of options, option being an array of key, value
 	LEVEL = ['Beginner', 'Intermediate', 'Pro']
 
-	validates_inclusion_of :level, :in => LEVEL
+	validates_inclusion_of :level, :in => LEVEL, on: :update
 end

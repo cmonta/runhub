@@ -28,7 +28,7 @@
 </p>
 
 
-<% if @profile.user == current_user || current_user.admin? %>
+<% if user_signed_in? && (@profile.user == current_user || current_user.admin?) %>
 <%= link_to 'Edit', edit_profile_path %> | 
 <% end %>
 <%= link_to 'Back', users_path %>
