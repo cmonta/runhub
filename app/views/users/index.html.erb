@@ -13,6 +13,7 @@
       <th>Registrations</th>
       <th>Followers</th>
       <th>Followees</th>
+      <th>Subscribe</th>
     </tr>
   </thead>
 
@@ -23,7 +24,9 @@
         <td><%=link_to user.races.count, race_register_list_races_path(:user => user) %></td>
         <td><%= link_to user.followers_count, users_list_followers_path(:user => user) %></td>
         <td><%= link_to user.follow_count, users_list_followees_path(:user => user) %></td>
-        <% if user_signed_in? %>
+        <% if user_signed_in? && current_user.following?(user) %>
+        <td><%= link_to 'Unfollow', users_unfollow_path(:user => user) %></td>
+        <% else %>
         <td><%= link_to 'Follow', users_follow_path(:user => user) %></td>
         <% end %>
       </tr>

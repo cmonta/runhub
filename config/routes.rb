@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'race_register/list_races'
   get 'race_register/list_users'
   get 'users/follow'
+  get 'users/unfollow'
   get 'users/list_followers'
   get 'users/list_followees'
 
