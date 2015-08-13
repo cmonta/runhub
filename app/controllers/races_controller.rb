@@ -72,7 +72,7 @@ class RacesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def race_params
-      params.require(:race).permit(:name, :date)
+      params.require(:race).permit(:name, :date, :image)
     end
 
     def correct_role

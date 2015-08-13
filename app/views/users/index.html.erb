@@ -9,6 +9,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
+      <th>Avatar</th>
       <th>Nickname</th>
       <th>Registrations</th>
       <th>Followers</th>
@@ -20,6 +21,7 @@
   <tbody>
     <% @users.each do |user| %>
       <tr>
+        <td><%= image_tag user.profile.avatar.url(:thumb) %></td>
         <td><%= link_to user.nickname, user.profile %></td>
         <td><%=link_to user.races.count, race_register_list_races_path(:user => user) %></td>
         <td><%= link_to user.followers_count, users_list_followers_path(:user => user) %></td>

@@ -2,6 +2,8 @@
 
 <h2>User profile</h2>
 
+<%= image_tag @profile.avatar.url(:thumb) %>
+
 <p>
   <strong>Email:</strong>
   <%= @profile.user.email %>

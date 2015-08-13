@@ -9,6 +9,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
+      <th>Board</th>
       <th>Name</th>
       <th>Date</th>
       <th>Inscrits</th>
@@ -18,6 +19,7 @@
   <tbody>
     <% @races.each do |race| %>
       <tr>
+        <td><%= image_tag race.image.url(:thumb) %></td>
         <td><%= race.name %></td>
         <td><%= race.date %></td>
         <td><%= link_to race.users.count, race_register_list_users_path(:race => race) %></td>

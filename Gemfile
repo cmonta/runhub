@@ -30,6 +30,8 @@ gem 'devise'
 
 gem "acts_as_follower"
 
+gem "paperclip", "~> 4.3"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
