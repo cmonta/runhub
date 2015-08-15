@@ -5,6 +5,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
+      <th>Poster</th>
       <th>Name</th>
       <th>Date</th>
     </tr>
@@ -13,6 +14,7 @@
   <tbody>
     <% @races.each do |race| %>
       <tr>
+        <td><%= image_tag race.image.url(:thumb) %></td>
         <td><%= race.name %></td>
         <td><%= race.date %></td>
         <td><%= link_to 'Show', race %></td>
