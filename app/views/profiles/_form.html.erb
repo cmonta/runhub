@@ -15,10 +15,10 @@
     <%= f.label :avatar %><br>
     <%= f.file_field :avatar %>
   </div>
-
   <div class="field">
-    <%= f.label :city %><br>
-    <%= f.text_field :city %>
+    <%= f.label :locality %><br>
+    <input id="user_input_autocomplete_address" placeholder="Your city..."><br>
+    <%= f.hidden_field :locality, readonly: true, id: "locality", datageo: "test" %>
   </div>
   <div class="field">
     <%= f.label :level %><br>
@@ -32,12 +32,3 @@
     <%= f.submit %>
   </div>
 <% end %>
-
-<form>
-  <label>Address</label>
-  <input id="user_input_autocomplete_address" placeholder="Votre adresse...">
-  <label>locality</label>
-  <input id="locality" name="locality" disabled>
-  <label>country</label>
-  <input id="country" name="country" disabled>
-</form>

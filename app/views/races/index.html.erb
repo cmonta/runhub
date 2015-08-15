@@ -12,6 +12,7 @@
       <th>Board</th>
       <th>Name</th>
       <th>Date</th>
+      <th>Locality</th>
       <th>Inscrits</th>
     </tr>
   </thead>
@@ -22,6 +23,7 @@
         <td><%= image_tag race.image.url(:thumb) %></td>
         <td><%= race.name %></td>
         <td><%= race.date %></td>
+        <td><%= race.locality %></td>
         <td><%= link_to race.users.count, race_register_list_users_path(:race => race) %></td>
         <td><%= link_to 'Show', race %></td>
         <% if  signed_in? && current_user.admin? %>

@@ -1,3 +1,4 @@
+/*
 function initializeAutocomplete(id) {
   var element = document.getElementById(id);
   if (element) {
@@ -27,3 +28,5 @@ function onPlaceChanged() {
 google.maps.event.addDomListener(window, 'page:load', function() {
   initializeAutocomplete('user_input_autocomplete_address');
 });
+
+*/

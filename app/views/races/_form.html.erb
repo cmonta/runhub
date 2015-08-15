@@ -17,6 +17,12 @@
   </div>
 
   <div class="field">
+    <%= f.label :locality %><br>
+    <input id="user_input_autocomplete_address" placeholder="Your city..."><br>
+    <%= f.hidden_field :locality, readonly: true, id: "locality", datageo: "test" %>
+  </div>
+
+  <div class="field">
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </div>
@@ -25,21 +31,13 @@
     <%= f.date_select :date %>
   </div>
 
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description, size: "80x8" %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
 
   <% end %>
-
- <form>
-  <label>Address</label>
-  <input id="user_input_autocomplete_address" placeholder="Votre adresse...">
-  <label>street_number</label>
-  <input id="street_number" name="street_number" disabled>
-  <label>route</label>
-  <input id="route" name="route" disabled>
-  <label>locality</label>
-  <input id="locality" name="locality" disabled>
-  <label>country</label>
-  <input id="country" name="country" disabled>
-</form>

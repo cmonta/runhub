@@ -27,7 +27,7 @@ class ProfilesController < ApplicationController
 
 	# Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params.require(:profile).permit(:city, :level, :description, :avatar)
+      params.require(:profile).permit(:locality, :level, :description, :avatar)
     end
 
     def correct_role

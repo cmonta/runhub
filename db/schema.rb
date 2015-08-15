@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150813075333) do
+ActiveRecord::Schema.define(version: 20150815200424) do
 
   create_table "follows", force: :cascade do |t|
     t.integer  "followable_id",                   null: false
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20150813075333) do
   add_index "follows", ["follower_id", "follower_type"], name: "fk_follows"
 
   create_table "profiles", force: :cascade do |t|
-    t.string   "city"
+    t.string   "locality"
     t.string   "level",               default: "Beginner"
     t.text     "description"
     t.integer  "user_id"
@@ -61,6 +61,8 @@ ActiveRecord::Schema.define(version: 20150813075333) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "locality"
+    t.text     "description"
   end
 
   create_table "users", force: :cascade do |t|
